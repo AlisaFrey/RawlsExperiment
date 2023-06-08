@@ -1218,7 +1218,7 @@ class Instruction_Game(Page):
             )
 
 class PlayersWaitPage(WaitPage):
-    template_name = 'BASELINE_encryptio/MyEncryptioWaitPage.html'
+    template_name = __name__ + '/MyEncryptioWaitPage.html'
     after_all_players_arrive = 'group_size'
 
     @staticmethod
@@ -1270,7 +1270,7 @@ class Game_cleaned(Page):
         player.income = participant.income
 
 class ResultsWaitPage(WaitPage):
-    template_name = 'BASELINE_encryptio/MyWaitPage.html'
+    template_name = __name__ + '/MyWaitPage.html'
     after_all_players_arrive = 'set_payoffs'
     #   <meta http-equiv="refresh" content="30">
 
@@ -1282,7 +1282,7 @@ class InitialBelief(Page):
         return player.round_number == 1
 
 class ResultsWaitPage2(WaitPage):
-    template_name = 'BASELINE_encryptio/MyWaitPage.html'
+    template_name = __name__ + '/MyWaitPage.html'
     after_all_players_arrive = 'evaluation'
     #   <meta http-equiv="refresh" content="30">
 
