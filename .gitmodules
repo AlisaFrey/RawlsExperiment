@@ -1,0 +1,3 @@
+[submodule "RawlsExperiment/payment"]
+	path = RawlsExperiment/payment
+	url = https://github.com/LeonHeidelbach/oTreePayoutRefModule
