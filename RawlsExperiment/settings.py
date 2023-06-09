@@ -31,6 +31,14 @@ SESSION_CONFIG_DEFAULTS = dict(
 PARTICIPANT_FIELDS = ['decision','is_dropout','num_correct', 'fake_num_correct','income']
 SESSION_FIELDS = ['params','players_per_group']
 
+ROOMS = [
+    dict(
+        name='dice_lab',
+        display_name ='DICE Lab',
+        participant_label_file='C:/otree/dicelab_otree_labels.txt'
+    )
+]
+
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
 LANGUAGE_CODE = 'de'
