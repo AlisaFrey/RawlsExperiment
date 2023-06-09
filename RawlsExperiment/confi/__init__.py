@@ -106,12 +106,12 @@ class Player(BasePlayer):
     ]
     )
 
-    self_better = models.IntegerField()
-    correct_relative_performance = models.IntegerField()
+    self_better = models.BooleanField()
+    correct_relative_performance = models.BooleanField()
     crt_performance = models.IntegerField(
         min=0,
         max=8)
-    self_evaluation = models.IntegerField()
+    self_evaluation = models.BooleanField()
     
 
 

@@ -378,55 +378,61 @@ def evaluation(group: Group):
         players = group.get_players()
         decision = [round(p.decision) for p in players]
         for p in players:
-            if Constants.treatment == 'BASE' or Constants.treatment == 'TAX_RANDOM':
-                print('player')
-                if (p.num_correct-1) <= p.belief3 <= (p.num_correct+1):
-                    p.belief_bonus3 = Constants.belief_bonus
-                    print("correct guess")
-                else:
-                    p.belief_bonus3 = 0
-                    print("wrong guess")
-
-                if p.decision == 1:
-                    print("high")
-                    if (group.puzzles_high - 1) <= p.belief2 <= (group.puzzles_high + 1):
-                        print("correct guess average")
-                        p.belief_bonus2 = Constants.belief_bonus
+            final_round = Constants.num_rounds
+            if p.round_number == final_round:
+                if Constants.treatment == 'BASE' or Constants.treatment == 'TAX_RANDOM':
+                    print('player')
+                    if (p.num_correct-1) <= p.belief3 <= (p.num_correct+1):
+                        p.belief_bonus3 = Constants.belief_bonus
+                        print("correct guess")
                     else:
-                        print("wrong guess average")
-                        p.belief_bonus2 = 0
-                elif p.decision == 0:
-                    print("low")
-                    if (group.puzzles_low - 1) <= p.belief2 <= (group.puzzles_low + 1):
-                        print("correct guess average")
-                        p.belief_bonus2 = Constants.belief_bonus
-                    else:
-                        print("wrong guess average")
-                        p.belief_bonus2 = 0
-
-            elif Constants.treatment == 'INCOME_RANDOM':
-                print('player fake')
-                if (p.fake_num_correct -1) <= p.belief3 <= (p.fake_num_correct +1):
-                    p.belief_bonus3 = Constants.belief_bonus
-                    print("correct guess")
-                else:
-                    p.belief_bonus3 = 0
-                    print("wrong guess")
-
-                if p.decision == 1:
-                    if (group.fake_puzzles_high -1) <= p.belief2 <= (group.fake_puzzles_high +1):
-                        print("correct guess average")
-                        p.belief_bonus2 = Constants.belief_bonus
-                    else:
+                        p.belief_bonus3 = 0
                         print("wrong guess")
-                        p.belief_bonus2 = 0
-                elif p.decision == 0:
-                    if (group.fake_puzzles_low -1) <= p.belief2 <= (group.fake_puzzles_low +1):
-                        print("correct guess average")
-                        p.belief_bonus2 = Constants.belief_bonus
+
+                    if p.decision == 1:
+                        print("high")
+                        if (group.puzzles_high - 1) <= p.belief2 <= (group.puzzles_high + 1):
+                            print("correct guess average")
+                            p.belief_bonus2 = Constants.belief_bonus
+                        else:
+                            print("wrong guess average")
+                            p.belief_bonus2 = 0
+                    elif p.decision == 0:
+                        print("low")
+                        if (group.puzzles_low - 1) <= p.belief2 <= (group.puzzles_low + 1):
+                            print("correct guess average")
+                            p.belief_bonus2 = Constants.belief_bonus
+                        else:
+                            print("wrong guess average")
+                            p.belief_bonus2 = 0
+
+                elif Constants.treatment == 'INCOME_RANDOM':
+                    print('player fake')
+                    if (p.fake_num_correct -1) <= p.belief3 <= (p.fake_num_correct +1):
+                        p.belief_bonus3 = Constants.belief_bonus
+                        print("correct guess")
                     else:
-                        print("wrong guess average")
-                        p.belief_bonus2 = 0
+                        p.belief_bonus3 = 0
+                        print("wrong guess")
+
+                    if p.decision == 1:
+                        if (group.fake_puzzles_high -1) <= p.belief2 <= (group.fake_puzzles_high +1):
+                            print("correct guess average")
+                            p.belief_bonus2 = Constants.belief_bonus
+                        else:
+                            print("wrong guess")
+                            p.belief_bonus2 = 0
+                    elif p.decision == 0:
+                        if (group.fake_puzzles_low -1) <= p.belief2 <= (group.fake_puzzles_low +1):
+                            print("correct guess average")
+                            p.belief_bonus2 = Constants.belief_bonus
+                        else:
+                            print("wrong guess average")
+                            p.belief_bonus2 = 0
+                else:
+                    p.belief_bonus2 = 0
+                    p.belief_bonus3 = 0
+                    print("no paid guess")
 
 def set_payoffs(group: Group):
         print('set_payoffs')
