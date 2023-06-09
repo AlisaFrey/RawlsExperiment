@@ -11,7 +11,7 @@ SESSION_CONFIGS = [
         app_sequence=["BASELINE_encryptio", "risk_elicitation",  "guess",
                       "dictator", "confi", "altruism_elicitation", "after_survey", "payment"],
         # choose treatment from list ['BASE', 'TAX_RANDOM', 'INCOME_RANDOM', 'PREFERENCES'],
-        # treatment='BASE',
+        ## treatment='BASE',
         task='decoding',
         attempts_per_puzzle=1,
         ),
