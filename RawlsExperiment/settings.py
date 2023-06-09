@@ -2,8 +2,8 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
-        name="HTN_TEST",
-        display_name="HTN_TEST",
+        name="RAW",
+        display_name="RAW",
         num_demo_participants=16,
         expShortName="RAW",
         expId=9,
@@ -11,7 +11,7 @@ SESSION_CONFIGS = [
         app_sequence=["BASELINE_encryptio", "risk_elicitation",  "guess",
                       "dictator", "confi", "altruism_elicitation", "after_survey", "payment"],
         # choose treatment from list ['BASE', 'TAX_RANDOM', 'INCOME_RANDOM', 'PREFERENCES'],
-        treatment='TAX_RANDOM',
+        treatment='BASE',
         task='decoding',
         attempts_per_puzzle=1,
         ),
