@@ -1,4 +1,5 @@
 from os import environ
+DEBUG = False
 
 SESSION_CONFIGS = [
     dict(
@@ -40,6 +41,7 @@ ROOMS = [
     )
 ]
 
+OTREE_PRODUCTION =1
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
 LANGUAGE_CODE = 'de'
