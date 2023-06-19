@@ -1,5 +1,6 @@
 from os import environ
 DEBUG = False
+#DATABASE_URL = "postgres://postgres@localhost/django_db"
 
 SESSION_CONFIGS = [
     dict(
