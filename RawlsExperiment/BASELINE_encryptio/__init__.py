@@ -195,7 +195,7 @@ def creating_session(subsession: Subsession):
                     player.num_correct = puzzles_correct.pop()
 
             elif subsession.round_number == 3:
-                puzzles_correct = [14,	19,	14,	16,	15,	13,	13,	16,	15,	15,	11,	10,	17,	15,	17,	14]
+                puzzles_correct = [13,	19,	14,	16,	15,	13,	13,	16,	15,	15,	11,	10,	17,	15,	17,	14]
                 random.shuffle(puzzles_correct)  # shuffles the list
                 print('puzzles round 3')
                 for player in subsession.get_players():
