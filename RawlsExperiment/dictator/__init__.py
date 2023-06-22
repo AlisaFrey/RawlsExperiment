@@ -29,7 +29,7 @@ def creating_session(subsession):
     num_groups = len(group_list)
     print("group_list", group_list)
     list = [num_groups]
-    for x in range(1, 10):
+    for x in range(0, 10):
         number = num_groups - x
         if number >0:
             list.append(number)
