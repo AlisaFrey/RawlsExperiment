@@ -14,8 +14,9 @@ Redristribution and Voting by Feet using a RET.
 Real-effort tasks. The different tasks are available in task_matrix.py, task_transcription.py, etc.
 You can delete the ones you don't need.
 
-THIS CONTAINS THE VALUES FROM THE 1. BASELINE SESSION.
-SESSIONS: 20.06.2023
+THIS CONTAINS THE VALUES FROM THE 2. BASELINE SESSION. /NEEDS TO BE UPDATED AFTER BASELINE 3
+
+SESSION 30.06.2023
 """
 
 
@@ -41,8 +42,8 @@ def get_task_module(player):
 
 class Constants(BaseConstants):
     name_in_url = "new_transcription_a_i_o_d"
-    players_per_group = 16
-    num_rounds = 6
+    players_per_group = 2#16
+    num_rounds = 1
     timeout_seconds = 180
     starttime = time.time()
     # select the treatment from this list: ['BASE', 'TAX_RANDOM', 'INCOME_RANDOM']  not (yet) included: 'PREFERENCES'
@@ -110,10 +111,10 @@ def creating_session(subsession: Subsession):
     if Constants.treatment == 'TAX_RANDOM':
         for player in subsession.get_players():
             # SHUFFLING TAX RATES/DECISION for different rounds (TAX_RANDOM):
-            # THE BELOW INSERTED VALUES WERE CREATED IN BASELINE SESSION 1
+            # THE BELOW INSERTED VALUES WERE CREATED IN BASELINE SESSION 2
             if subsession.round_number == 1:
-                LOW1 = [6, 7, 11, 13, 14, 15, 16]
-                HIGH1 = [1, 2, 3, 4, 5, 8, 9, 10, 12]
+                LOW1 = [1, 2, 6, 8, 9, 13]
+                HIGH1 = [3, 4, 5, 7, 10, 11, 12, 14, 15, 16]
                 print('shuffling round 1')
                 print(' LOW = ', LOW1)
                 print(' HIGH = ', HIGH1)
@@ -122,8 +123,8 @@ def creating_session(subsession: Subsession):
                 if player.id_in_group in HIGH1:  # HIGH
                     player.decision = 1
             if subsession.round_number == 2:
-                LOW2 = [2, 3, 5, 6, 7, 8, 13, 14, 15]
-                HIGH2 = [1,4,9,10,11,12,16]
+                LOW2 = [4, 5, 6, 10, 11, 12, 13, 15]
+                HIGH2 = [1, 2, 3, 7, 8, 9, 14, 16]
                 print('shuffling round 2')
                 print(' LOW = ', LOW2)
                 print(' HIGH = ', HIGH2)
@@ -132,8 +133,8 @@ def creating_session(subsession: Subsession):
                 if player.id_in_group in HIGH2:  # HIGH
                     player.decision = 1
             if subsession.round_number == 3:
-                LOW3 = [1, 3, 4, 5, 7, 8, 11, 15, 16]
-                HIGH3 = [2, 6, 9, 10, 12, 13, 14]
+                LOW3 = [2, 3, 4, 5, 6, 9, 14]
+                HIGH3 = [1, 7, 8, 10, 11, 12, 13, 15, 16]
                 print('shuffling round 3')
                 print(' LOW = ', LOW3)
                 print(' HIGH = ', HIGH3)
@@ -142,8 +143,8 @@ def creating_session(subsession: Subsession):
                 if player.id_in_group in HIGH3:  # HIGH
                     player.decision = 1
             if subsession.round_number == 4:
-                LOW4 = [1, 2, 4, 5, 8, 11, 13, 14, 15]
-                HIGH4 = [3, 6, 7, 9, 10, 12, 16]
+                LOW4 = [1, 3, 4, 6, 8, 9, 10, 11, 14, 15]
+                HIGH4 = [2, 5, 7, 12, 13, 16]
                 print('shuffling round 4')
                 print(' LOW = ', LOW4)
                 print(' HIGH = ', HIGH4)
@@ -152,8 +153,8 @@ def creating_session(subsession: Subsession):
                 if player.id_in_group in HIGH4:  # HIGH
                     player.decision = 1
             if subsession.round_number == 5:
-                LOW5 = [1, 2, 7, 8, 11, 13, 14, 15, 16]
-                HIGH5 = [3, 4, 5, 6, 9, 10, 12]
+                LOW5 = [1, 2, 4, 5, 6, 8, 11]
+                HIGH5 = [3, 7, 9, 10, 12, 13, 14, 15, 16]
                 print('shuffling round 5')
                 print(' LOW = ', LOW5)
                 print(' HIGH = ', HIGH5)
@@ -162,8 +163,8 @@ def creating_session(subsession: Subsession):
                 if player.id_in_group in HIGH5:  # HIGH
                     player.decision = 1
             if subsession.round_number == 6:
-                LOW6 = [1,2,3,5,7,8,10,11,13,14,15,16]
-                HIGH6 = [4, 6, 9, 12]
+                LOW6 = [1,2,3,4,5,6,7,9,10,12,14,16]
+                HIGH6 = [8, 11, 13, 15]
                 print('shuffling round 6')
                 print(' LOW = ', LOW6)
                 print(' HIGH = ', HIGH6)
@@ -177,9 +178,10 @@ def creating_session(subsession: Subsession):
     if Constants.treatment == 'INCOME_RANDOM':
         
             # SHUFFLING CORRECT PUZZLES for different rounds (INCOME_RANDOM treatment):
-            # THE BELOW INSERTED VALUES WERE CREATED IN BASELINE SESSION 1
+        # THE BELOW INSERTED VALUES WERE CREATED IN BASELINE SESSION 2
             if subsession.round_number == 1:
-                puzzles_correct = [12, 15, 9,14,14,12,11,12,12,11,12,8,15,12,14,13]
+                puzzles_correct = [17,	14,	11,	13,	14,	12,	13,	11,	12,	13,	14,	13,	9,	11,	12,	12
+                                   ]
                 random.shuffle(puzzles_correct) # shuffles the list
                 print('puzzles round 1')
                 for player in subsession.get_players():
@@ -188,35 +190,40 @@ def creating_session(subsession: Subsession):
                     #random.choice(puzzles_correct) chooses for each player from the whole list 
 
             elif subsession.round_number == 2:
-                puzzles_correct = [13,	15,	14,	17,	14,	14,	13,	16,	14,	11,	10,	9,	16,	14,	15,	13]
+                puzzles_correct = [16,	16,	13,	17,	13,	14,	13,	13,	16,	16,	15,	14,	9,	12,	15,	13,
+                                   ]
                 random.shuffle(puzzles_correct)
                 print('puzzles round 2')
                 for player in subsession.get_players():
                     player.num_correct = puzzles_correct.pop()
 
             elif subsession.round_number == 3:
-                puzzles_correct = [14,	19,	14,	16,	15,	13,	13,	16,	15,	15,	11,	10,	17,	15,	17,	14]
+                puzzles_correct = [17,	14,	16,	17,	12,	15,	13,	14,	15,	16,	15,	17,	10,	14,	14,	14
+                                   ]
                 random.shuffle(puzzles_correct)  # shuffles the list
                 print('puzzles round 3')
                 for player in subsession.get_players():
                     player.num_correct = puzzles_correct.pop()
                 
             elif subsession.round_number == 4:
-                puzzles_correct = [15,	20,	15,	17,	14,	12,	14,	17,	16,	15,	14,	11,	17,	15,	18,	15]
+                puzzles_correct = [13,	15,	16,	17,	16,	16,	14,	15,	16,	15,	16,	16,	7,	14,	10,	13,
+                                   ]
                 random.shuffle(puzzles_correct)  # shuffles the list
                 print('puzzles round 4')
                 for player in subsession.get_players():
                     player.num_correct = puzzles_correct.pop()
 
             elif subsession.round_number == 5:
-                puzzles_correct = [14,	20,	15,	15,	14,	12,	14,	14,	16,	14,	14,	12,	16,	14,	19,	15]
+                puzzles_correct = [16,	15,	16,	17,	19,	16,	15,	15,	16,	16,	15,	15,	9,	15,	13,	13,
+                                   ]
                 random.shuffle(puzzles_correct)  # shuffles the list
                 print('puzzles round 5')
                 for player in subsession.get_players():
                     player.num_correct = puzzles_correct.pop()
                 
             elif subsession.round_number == 6:
-                puzzles_correct = [15,	20,	14,	17,	12,	13,	14,	16,	15,	15,	12,	10,	17,	12,	17,	15]
+                puzzles_correct = [16,	16,	13,	18,	18,	16,	14,	15,	15,	17,	15,	16,	12,	14,	12,	15
+                                   ]
                 random.shuffle(puzzles_correct)  # shuffles the list
                 print('puzzles round 6')
                 for player in subsession.get_players():
@@ -378,15 +385,66 @@ def group_size(group: Group):
         print('group.players_low', group.players_low)
         group.players_high = sum(decision)
         print('group.players_high', group.players_high)
+
 def evaluation(group: Group):
         print('evaluation')
         players = group.get_players()
         decision = [round(p.decision) for p in players]
+
+        if Constants.treatment == 'BASE':
+            if group.players_low == 0:
+                group.puzzles_low = 0
+                print("group.puzzles_low", group.puzzles_low)
+            else:
+                group.puzzles_low = round(sum(p.num_correct_low for p in players)/ group.players_low, 2)
+                print("group.puzzles_low", group.puzzles_low)
+
+            if group.players_high == 0:
+                group.puzzles_high = 0
+                print("group.puzzles_high", group.puzzles_high)
+            else: 
+                group.puzzles_high = round(sum(p.num_correct_high for p in players)/group.players_high, 2)
+                print("group.puzzles_high", group.puzzles_high)
+        elif Constants.treatment == 'TAX_RANDOM':
+            if group.players_low == 0:
+                group.puzzles_low = 0
+                print("group.puzzles_low", group.puzzles_low)
+            else:
+                group.puzzles_low = round(sum(p.num_correct_low for p in players)/ group.players_low, 2)
+                print("group.puzzles_low", group.puzzles_low)
+
+            if group.players_high == 0:
+                group.puzzles_high = 0
+                print("group.puzzles_high", group.puzzles_high)
+            else: 
+                group.puzzles_high = round(sum(p.num_correct_high for p in players)/group.players_high, 2)
+                print("group.puzzles_high", group.puzzles_high)
+        elif Constants.treatment == 'INCOME_RANDOM':
+            if group.players_low == 0:
+                group.puzzles_low = 0
+                group.fake_puzzles_low = 0
+                print("group.puzzles_low", group.puzzles_low)
+            else:
+                group.puzzles_low = round(sum(p.num_correct_low for p in players)/ group.players_low,2)
+                group.fake_puzzles_low = round(sum(p.fake_num_correct_low for p in players)/ group.players_low, 2)
+                print("group.puzzles_low", group.puzzles_low)
+
+            if group.players_high == 0:
+                group.puzzles_high = 0
+                group.fake_puzzles_high = 0
+                print("group.puzzles_high", group.puzzles_high)
+            else: 
+                group.puzzles_high = round(sum(p.num_correct_high for p in players)/group.players_high, 2)
+                group.fake_puzzles_high = round(
+                    sum(p.fake_num_correct_high for p in players)/group.players_high, 2)
+                print("group.puzzles_high", group.puzzles_high)
+
+
         for p in players:
             final_round = Constants.num_rounds
             if p.round_number == final_round:
                 if Constants.treatment == 'BASE' or Constants.treatment == 'TAX_RANDOM':
-                    print('player')
+                    print('player', p.id_in_group)
                     if (p.num_correct-1) <= p.belief3 <= (p.num_correct+1):
                         p.belief_bonus3 = Constants.belief_bonus
                         print("correct guess")
@@ -396,10 +454,10 @@ def evaluation(group: Group):
 
                     if p.decision == 1:
                         print("high")
-                        if (group.puzzles_high - 1) <= p.belief2 <= (group.puzzles_high + 1):
+                        if (group.puzzles_high-1) <= p.belief2 <= (group.puzzles_high+1):
                             print("correct guess average")
                             p.belief_bonus2 = Constants.belief_bonus
-                        else:
+                        elif p.belief_bonus2 < (group.puzzles_high-1) or p.belief2 > (group.puzzles_high+1):
                             print("wrong guess average")
                             p.belief_bonus2 = 0
                     elif p.decision == 0:
@@ -407,12 +465,12 @@ def evaluation(group: Group):
                         if (group.puzzles_low - 1) <= p.belief2 <= (group.puzzles_low + 1):
                             print("correct guess average")
                             p.belief_bonus2 = Constants.belief_bonus
-                        else:
+                        elif p.belief_bonus2 < (group.puzzles_low-1) or p.belief2 > (group.puzzles_low+1):
                             print("wrong guess average")
                             p.belief_bonus2 = 0
 
                 elif Constants.treatment == 'INCOME_RANDOM':
-                    print('player fake')
+                    print('player fake', p.id_in_group)
                     if (p.fake_num_correct -1) <= p.belief3 <= (p.fake_num_correct +1):
                         p.belief_bonus3 = Constants.belief_bonus
                         print("correct guess")
