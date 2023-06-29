@@ -14,15 +14,9 @@ Redristribution and Voting by Feet using a RET.
 Real-effort tasks. The different tasks are available in task_matrix.py, task_transcription.py, etc.
 You can delete the ones you don't need.
 
-<<<<<<< HEAD
 THIS CONTAINS THE VALUES FROM THE 2. BASELINE SESSION. /NEEDS TO BE UPDATED AFTER BASELINE 3
 
-SESSION 30.06.2023
-=======
-THIS CONTAINS THE VALUES FROM THE 2. BASELINE SESSION.
-
-SESSIONS 22.06.2023
->>>>>>> 6199015e8e68bf4b5807b04edc3b28eb333dc9a8
+SESSION 30.06.2023 (BASELINE 3)
 """
 
 
