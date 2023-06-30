@@ -18,10 +18,7 @@ SESSION_CONFIGS = [
         attempts_per_puzzle=1,
         ),
     # when updating num_demo_participants=x, also init.py in BASELINE_encryptio, confi, guess
-    
-]
 
-SESSION_CONFIGS = [
     dict(
         name="RAW2",
         display_name="RAW2",
