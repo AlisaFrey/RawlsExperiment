@@ -16,7 +16,7 @@ You can delete the ones you don't need.
 
 THIS CONTAINS THE VALUES FROM THE 2. BASELINE SESSION. /NEEDS TO BE UPDATED AFTER BASELINE 3
 
-SESSION 30.06.2023 (BASELINE 3)
+SESSION 03.07.2023 (BASELINE 3)
 """
 
 
@@ -43,7 +43,7 @@ def get_task_module(player):
 class Constants(BaseConstants):
     name_in_url = "new_transcription_a_i_o_d"
     players_per_group = 16 #16
-    num_rounds = 6
+    num_rounds = 6 #6
     timeout_seconds = 180
     starttime = time.time()
     # select the treatment from this list: ['BASE', 'TAX_RANDOM', 'INCOME_RANDOM']  not (yet) included: 'PREFERENCES'
