@@ -9,8 +9,27 @@ SESSION_CONFIGS = [
         num_demo_participants=16,
         expShortName="RAW",
         expId=9,
-        sessId=61,
+        sessId=70,
         app_sequence=["BASELINE_encryptio", "risk_elicitation",  "guess",
+                      "dictator", "confi", "altruism_elicitation", "after_survey", "payment"],
+        # choose treatment from list ['BASE', 'TAX_RANDOM', 'INCOME_RANDOM', 'PREFERENCES'],
+        # treatment='BASE',
+        task='decoding',
+        attempts_per_puzzle=1,
+        ),
+    # when updating num_demo_participants=x, also init.py in BASELINE_encryptio, confi, guess
+    
+]
+
+SESSION_CONFIGS = [
+    dict(
+        name="RAW2",
+        display_name="RAW2",
+        num_demo_participants=16,
+        expShortName="RAW",
+        expId=9,
+        sessId=70,
+        app_sequence=["risk_elicitation",  "guess",
                       "dictator", "confi", "altruism_elicitation", "after_survey", "payment"],
         # choose treatment from list ['BASE', 'TAX_RANDOM', 'INCOME_RANDOM', 'PREFERENCES'],
         # treatment='BASE',

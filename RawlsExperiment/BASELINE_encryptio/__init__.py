@@ -42,12 +42,12 @@ def get_task_module(player):
 
 class Constants(BaseConstants):
     name_in_url = "new_transcription_a_i_o_d"
-    players_per_group = 2#16
-    num_rounds = 1
+    players_per_group = 16 #16
+    num_rounds = 6
     timeout_seconds = 180
     starttime = time.time()
     # select the treatment from this list: ['BASE', 'TAX_RANDOM', 'INCOME_RANDOM']  not (yet) included: 'PREFERENCES'
-    treatment = 'TAX_RANDOM'
+    treatment = 'BASE'
 
     B_instructions_template = __name__ + "/B/instructions_short_B.html"
     B_instructions_template_before = __name__ + "/B/instructions_before_B.html"
