@@ -73,7 +73,7 @@ class Player(BasePlayer):
 
     run = models.IntegerField(  # (intuitive response = 90;    correct response=40; Van Dooren et al. 2005)
     label='''
-    Ellen und Kim laufen auf einer Laufbahn. Sie laufen gleich schnell, aber Ellen hat später angefangen. Wenn Ellen 5 Runden gelaufen ist, ist Kim 15 Runden gelaufen. Wenn Ellen 30 Runden gelaufen ist Runden gelaufen ist, wie viele Runden ist Kim gelaufen?
+    Ellen und Kim laufen auf einer Laufbahn. Sie laufen gleich schnell, aber Ellen hat später angefangen. Wenn Ellen 5 Runden gelaufen ist, ist Kim 15 Runden gelaufen. Wenn Ellen 30 Runden gelaufen ist, wie viele Runden ist Kim gelaufen?
 ''',
     )
 
