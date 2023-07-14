@@ -17,7 +17,7 @@ You can delete the ones you don't need.
 THIS CONTAINS THE VALUES FROM THE 3. BASELINE SESSION*.
 
 FOR DICELAB
-SESSION 14.07.2023 ('TAX_RANDOM 4')
+SESSION 20.07.2023 ('INCOME_RANDOM 4')
 """
 
 
@@ -48,7 +48,7 @@ class Constants(BaseConstants):
     timeout_seconds = 180
     starttime = time.time()
     # select the treatment from this list: ['BASE', 'TAX_RANDOM', 'INCOME_RANDOM']  not (yet) included: 'PREFERENCES'
-    treatment = 'TAX_RANDOM'
+    treatment = 'INCOME_RANDOM'
 
     B_instructions_template = __name__ + "/B/instructions_short_B.html"
     B_instructions_template_before = __name__ + "/B/instructions_before_B.html"
