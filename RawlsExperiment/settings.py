@@ -9,7 +9,7 @@ SESSION_CONFIGS = [
         num_demo_participants=16,
         expShortName="RAW",
         expId=9,
-        sessId=69,
+        sessId=76,
         app_sequence=["BASELINE_encryptio", "risk_elicitation",  "guess",
                       "dictator", "confi", "altruism_elicitation", "after_survey", "payment"],
         # choose treatment from list ['BASE', 'TAX_RANDOM', 'INCOME_RANDOM', 'PREFERENCES'],
